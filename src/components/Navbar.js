@@ -1,42 +1,36 @@
 import React from "react";
+//import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+//import { Context } from "../store/appContext";
 
 
 const Navbar = () => {
-
-
-  return (
-
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="container-fluid">
-        <Link className="navbar-brand" to="/">Poderío</Link>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/">Home</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/demo">Demo</Link>
-            </li>
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Prueba de que bootstrap Js funciona
-              </a>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a className="dropdown-item" >Action</a></li>
-                <li><a className="dropdown-item" >Another action</a></li>
-                <li><a className="dropdown-item" >Something else here</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+    return ( 
+        <>
+    <nav className="navbar navbar-expand-lg bg-info mb-2 ml-5">
+    <Link to="/">Kino</Link>
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button>
+    
+      <div className="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+        <ul className="navbar-nav p-2">
+          <li className="nav-item active mx-3">
+            <Link to="/pelis">Peliculas</Link>
+          </li>
+          <li className="nav-item mx-3">
+          <Link to="/progtv">Programas de television</Link>
+          </li>
+          <li className="nav-item mx-3">
+          <Link to="/person">Personas</Link>
+          </li>
+        </ul>
       </div>
     </nav>
-
-  );
+        </>
+     );
 }
-
+ 
 export default Navbar;
+
+

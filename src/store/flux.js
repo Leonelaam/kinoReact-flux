@@ -1,13 +1,26 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: "No hay color"
+			pelis:[],
+			person: [],
+			progTV: []
 		},
 		actions: {
+			getPelis: (url) => {
+				fetch(url)
+					.then(response => response.json())
+					.then(data => {
+						setStore({ pelis: data });
+					});
+			},
 			// Usa getActions para llamar una function dentro de una fuction. Te dejo un ejemplo
 			exampleFunction: () => {
 				getActions().changeColor("green");
 			},
+
+
+
+
             //funcion de ejemplo para hacer peticiones fetch
 			loadSomeData: () => {
 				/**

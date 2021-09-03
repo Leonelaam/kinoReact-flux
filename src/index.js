@@ -6,8 +6,13 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js"
 import App from './App';
 import MyContextProvider from './store/appContext'
 
-
+// Renderiza la App
 ReactDOM.render(
+//   MyContextProvider envuelve la
+// aplicación raíz y, así, toda nuestra
+// aplicación ahora puede acceder a
+// los datos proporcionados por el
+// contexto.
   <MyContextProvider>
   <React.StrictMode>
     <App />
