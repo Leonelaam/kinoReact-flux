@@ -6,8 +6,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			progTV: []
 		},
 		actions: {
-			getPelis: (url) => {
-				fetch(url)
+			getPelis: () => {
+				fetch('https://api.themoviedb.org/3/movie/popular?api_key=64b73d43a55a920af8890d10d8de7724')
 					.then(response => response.json())
 					.then(data => {
 						setStore({ pelis: data });
