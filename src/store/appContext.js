@@ -22,6 +22,8 @@ import getState from "./flux.js"; //importamos getState
 			 *
 			 **/
        state.actions.getPelis();
+       state.actions.getPerson()
+       state.actions.getProgTV()
 		}, []);
 
     return (
@@ -32,4 +34,4 @@ import getState from "./flux.js"; //importamos getState
   };
 
 //exportamos el proveedor
-export default MyContextProvider
+export default MyContextProvider 

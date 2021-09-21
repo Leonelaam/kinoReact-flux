@@ -9,9 +9,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getPelis: () => {
 				fetch('https://api.themoviedb.org/3/movie/popular?api_key=64b73d43a55a920af8890d10d8de7724')
 					.then(response => response.json())
-					.then(data => {
-						setStore({ pelis: data });
-					});
+					.then(data => setStore({ pelis: data.results }));
+			},
+			getPerson: () => {
+				fetch('https://api.themoviedb.org/3/person/popular?api_key=64b73d43a55a920af8890d10d8de7724')
+					.then(response => response.json())
+					.then(data => setStore({ person: data.results }));
+			},
+			getProgTV: () => {
+				fetch('https://api.themoviedb.org/3/tv/popular?api_key=64b73d43a55a920af8890d10d8de7724')
+					.then(response => response.json())
+					.then(data => setStore({ progTV: data.results }));
 			},
 			// Usa getActions para llamar una function dentro de una fuction. Te dejo un ejemplo
 			exampleFunction: () => {

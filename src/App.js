@@ -6,8 +6,6 @@ import ProfilePelis from "./views/ProfilePelis";
 import ProfilePerson from "./views/ProfilePerson";
 import ProfileProgTV from "./views/ProfileProgTV"
 
-
-
 function App() {
 
   return (
