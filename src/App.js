@@ -4,7 +4,10 @@ import Navbar from "./components/Navbar";
 import Home from "./views/Home";
 import ProfilePelis from "./views/ProfilePelis";
 import ProfilePerson from "./views/ProfilePerson";
-import ProfileProgTV from "./views/ProfileProgTV"
+import ProfileProgTV from "./views/ProfileProgTV";
+import Register from "./views/Register";
+import Login from "./views/Login";
+import MovieDetails from "./components/MovieDetails";
 
 function App() {
 
@@ -15,9 +18,18 @@ function App() {
           <Route exact path="/">
             <Home/>
           </Route>
+          <Route exact path="/register">
+						<Register />
+					</Route>
+					<Route exact path="/login">
+						<Login />
+					</Route>
           <Route exact path="/pelis">
             <ProfilePelis/>
           </Route>
+          <Route exact path="/pelis/:id">
+        <MovieDetails/>
+        </Route>
           <Route exact path="/person">
             <ProfilePerson/>
           </Route>

@@ -6,9 +6,8 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return ( 
-        <>
     <nav className="navbar navbar-expand-lg bg-info mb-2 ml-5">  
-    <strong><Link className="navbar-brand mx-5" to="/">Kino</Link></strong>
+    <strong><Link to="/" className="navbar-brand mx-5">Kino</Link></strong>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -25,8 +24,22 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
+      <div className="dropdown">
+  <button className="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Menu
+  </button>
+  <div className="dropdown-menu">
+		<Link to="/register" className="dropdown-item">
+			Registrarse
+		</Link>
+		<Link to="/login" className="dropdown-item">
+			Login
+		</Link>
+  </div>
+</div>
+  
+    
     </nav>
-        </>
      );
 }
  

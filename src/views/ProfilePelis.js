@@ -6,7 +6,6 @@ import CardPelis from "../components/CardPelis"
 const ProfilePelis = () => {
     const {store} = useContext(Context);
 
-    // imprimir por consola
     console.log(store.pelis);
     
     
