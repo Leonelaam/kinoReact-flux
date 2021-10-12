@@ -7,7 +7,8 @@ import ProfilePerson from "./views/ProfilePerson";
 import ProfileProgTV from "./views/ProfileProgTV";
 import Register from "./views/Register";
 import Login from "./views/Login";
-import MovieDetails from "./components/MovieDetails";
+import PelisDetails from "./components/PelisDetails";
+import PersonDetails from "./components/PersonDetails";
 
 function App() {
 
@@ -28,11 +29,14 @@ function App() {
             <ProfilePelis/>
           </Route>
           <Route exact path="/pelis/:id">
-        <MovieDetails/>
+        <PelisDetails/>
         </Route>
           <Route exact path="/person">
             <ProfilePerson/>
           </Route>
+          <Route exact path="/person/:id">
+        <PersonDetails/>
+        </Route>
           <Route exact path="/progtv">
             <ProfileProgTV/>
           </Route>

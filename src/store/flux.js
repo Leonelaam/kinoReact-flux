@@ -4,11 +4,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			pelis:[],
 			person: [],
 			progTV: [],
-			favoritos: [],
-			// login
-			nick_name: "nick_name",
-			token: null,
-			user_id: null
+			favoritos: []
+			
 		},
 		actions: {
 			getPelis: () => {
@@ -31,65 +28,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 				getActions().changeColor("green");
 			},
 
-			login: () => {
-				setStore({
-					nick_name: sessionStorage.getItem("nick_name"),
-					token: sessionStorage.getItem("u_token"),
-					user_id: sessionStorage.getItem("user_id"),
-					redirect_logout: false
-				});
-				alert("Has ingresado a tu cuenta");
-			},
 
-			// favoritos
-			favoritos: data => {
-				let alreadyFav = false;
-				let favArr = getStore().favoritos;
+			// favoritos :D ;D
+			addFavoritos: favorito => {
+				setStore({
+					favoritos:getStore().favoritos.concat
+					(favorito) 
+				});
+			}, 
 				
-				if (favArr) {
-					fetch(`${process.env.BACKEND_URL}/api/user/${getStore().user_id}/favorits`, {
-						method: "POST",
-						headers: {
-							"Content-Type": "application/json"
-						},
-						body: JSON.stringify(data)
-					})
-						.then(response => response.json())
-						.then(() => {
-							getActions().fetchGetFavorite();
-							alert("Agregado a tus favoritos");
-						});
-				} else {
-					// para que no repita el favorito
-					favArr.forEach(element => {
-						if (element.place_id === data.place_id) {
-							alreadyFav = true;
-							alert("¡Ooops! ¡Ya está en tus favoritos!");
-						}
-					});
-					if (!alreadyFav) {
-						fetch(`${process.env.BACKEND_URL}/api/user/${getStore().user_id}/favorites`, {
-							method: "POST",
-							headers: {
-								"Content-Type": "application/json"
-							},
-							body: JSON.stringify(data)
-						})
-							.then(response => response.json())
-							.then(() => {
-								getActions().fetchGetFavorite();
-							});
-					}
-				}
-			},
-			fetchGetFavorite: () => {
-				fetch(`${process.env.BACKEND_URL}/api/user/${getStore().user_id}/favoritos`)
-					.then(response => response.json())
-					.then(data => {
-						setStore({ favoritos: data });
-					})
-					
-			},
 
             //funcion de ejemplo para hacer peticiones fetch
 			loadSomeData: () => {

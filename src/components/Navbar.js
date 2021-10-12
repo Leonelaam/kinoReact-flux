@@ -1,10 +1,11 @@
-import React from "react";
-//import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-//import { Context } from "../store/appContext";
 
+import React, { useContext } from "react";
+import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const {store} = useContext(Context);
+
     return ( 
     <nav className="navbar navbar-expand-lg bg-info mb-2 ml-5">  
     <strong><Link to="/" className="navbar-brand mx-5">Kino</Link></strong>
@@ -29,6 +30,7 @@ const Navbar = () => {
     Menu
   </button>
   <div className="dropdown-menu">
+    {store.favoritos}
 		<Link to="/register" className="dropdown-item">
 			Registrarse
 		</Link>

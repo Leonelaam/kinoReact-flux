@@ -22,8 +22,9 @@ import getState from "./flux.js"; //importamos getState
 			 *
 			 **/
        state.actions.getPelis();
-       state.actions.getPerson()
+       state.actions.getPerson();
        state.actions.getProgTV()
+      //  state.actions.addFavoritos()
 		}, []);
 
     return (
